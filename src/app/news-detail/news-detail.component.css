@@ -1,0 +1,47 @@
+
+div {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+h1 {
+  font-size: 2rem;
+  color: #2c2c2c;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+
+p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+p strong {
+  font-weight: bold;
+  color: #444;
+}
+
+
+div *ngIf="!news" {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #d9534f;
+  margin-top: 30px;
+}

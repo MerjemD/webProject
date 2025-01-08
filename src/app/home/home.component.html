@@ -1,0 +1,13 @@
+<div *ngIf="news.length > 0; else noNews" class="news-container">
+  <div class="card" *ngFor="let item of news" (click)="openNews(item)">
+    <img [src]="item.image_url || 'assets/default-news.jpg'" alt="News Image" class="card-image" />
+    <div class="card-content">
+      <h3 class="card-title">{{ item.title }}</h3>
+      <small>Objavljeno: {{ item.created_at | date }}</small>
+    </div>
+  </div>
+</div>
+
+<ng-template #noNews>
+  <p>Trenutno nema vijesti.</p>
+</ng-template>

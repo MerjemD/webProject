@@ -1,0 +1,48 @@
+<div class="card">
+  <h2>Registracija</h2>
+  <form #registerForm="ngForm" (ngSubmit)="onRegister()">
+    <input
+      type="text"
+      name="username"
+      [(ngModel)]="username"
+      placeholder="Korisničko ime"
+      required
+      minlength="3"
+      #usernameModel="ngModel"
+    />
+    <div *ngIf="usernameModel.invalid && usernameModel.touched">
+      <small class="error">Korisničko ime mora imati najmanje 3 karaktera.</small>
+    </div>
+
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="email"
+      placeholder="Email"
+      required
+      #emailModel="ngModel"
+    />
+    <div *ngIf="emailModel.invalid && emailModel.touched">
+      <small class="error">Unesite ispravan email.</small>
+    </div>
+
+    <input
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+      placeholder="Lozinka"
+      required
+      minlength="8"
+      #passwordModel="ngModel"
+    />
+    <div *ngIf="passwordModel.invalid && passwordModel.touched">
+      <small class="error">Lozinka mora imati najmanje 8 karaktera.</small>
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Registrujte se</button>
+  </form>
+
+
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+</div>

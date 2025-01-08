@@ -1,0 +1,18 @@
+<div>
+  <h1>Dobro došli!</h1>
+  <label for="datePicker">Izaberite datum:</label>
+  <input
+    type="date"
+    id="datePicker"
+    [(ngModel)]="selectedDate"
+    (change)="loadNewsByDate()"
+  />
+  <h2>Vijesti za {{ selectedDate | date: 'dd.MM.yyyy' }}</h2>
+  <ul>
+    <li *ngFor="let item of news">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.content }}</p>
+      <img *ngIf="item.image_url" [src]="item.image_url" alt="Slika vijesti" />
+    </li>
+  </ul>
+</div>
