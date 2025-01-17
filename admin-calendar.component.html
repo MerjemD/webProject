@@ -1,0 +1,23 @@
+<div class="calendar-container">
+  <h1>Administratorski kalendar</h1>
+  <input
+    type="date"
+    [(ngModel)]="selectedDate"
+    class="date-picker"
+    (change)="fetchNewsForDate()"
+  />
+  <div class="news-container">
+    <h2>Vijesti za {{ selectedDate | date: 'dd.MM.yyyy' }}</h2>
+    <ul *ngIf="news.length > 0">
+      <li *ngFor="let item of news">{{ item.title }} - {{ item.content }}</li>
+    </ul>
+    <p *ngIf="news.length === 0">Nema vijesti za odabrani datum.</p>
+  </div>
+  <div class="add-news-form">
+    <h3>Dodaj vijest</h3>
+    <input [(ngModel)]="newTitle" placeholder="Naslov vijesti" />
+    <textarea [(ngModel)]="newContent" placeholder="Sadržaj vijesti"></textarea>
+    <input type="file" (change)="onFileSelected($event)" />
+    <button (click)="addNews()">Dodaj vijest</button>
+  </div>
+</div>

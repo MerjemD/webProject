@@ -1,0 +1,48 @@
+.calendar-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.date-picker {
+  font-size: 16px;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.news-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.news-container li {
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.add-news-form input,
+.add-news-form textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-news-form button {
+  background-color: #1e90ff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-news-form button:hover {
+  background-color: #1c7ed6;
+}
